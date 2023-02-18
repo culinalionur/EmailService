@@ -24,7 +24,7 @@ namespace EmailService.Infrastructure.Services
             MailMessage mail = new();
             mail.IsBodyHtml= isBodyHtml;
             mail.Subject= subject;
-            if (body is null)
+            if (body is null || body.Trim() == "")
             {
                 throw new NoBodyException();
             }

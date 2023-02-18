@@ -14,7 +14,8 @@ namespace EmailService.Persistence
     {
         public static void AddPersistenceServices(this IServiceCollection services)
         {
-            services.AddScoped<IRepository<Email>, Repository<Email>>();
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
     }
 }
